@@ -477,6 +477,26 @@ def validate(
     subprocess.run(["streamlit", "run", str(app_path)], check=False)
 
 
+@app.command("predict-ui")
+def predict_ui() -> None:
+    """Lancer l'interface Streamlit de prédiction de match."""
+    import subprocess
+    import sys
+
+    try:
+        import streamlit  # noqa: F401
+    except ImportError:
+        console.print(
+            "[red]Streamlit non installé. Installez avec : "
+            'pip install -e ".[ui,gnn]"[/red]'
+        )
+        raise typer.Exit(1) from None
+
+    app_path = Path(__file__).parent / "prediction" / "app.py"
+    console.print("Lancement de l'interface de prédiction...")
+    subprocess.run([sys.executable, "-m", "streamlit", "run", str(app_path)], check=False)
+
+
 # Sous-commandes de la phase 2 (poses + GNN), disponibles sous `kata-pipeline gnn ...`.
 # L'import est différé pour ne pas exiger torch/mediapipe si l'utilisateur ne s'en sert pas.
 try:  # pragma: no cover - dépendances optionnelles

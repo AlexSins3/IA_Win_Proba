@@ -186,6 +186,27 @@ kata-pipeline gnn extract-poses -c config/drive.local.yaml
 Voir [GUIDE.md](GUIDE.md) pour la configuration complète. Le train ne contacte
 jamais Drive : il reste fondé uniquement sur les CSV et les fichiers de poses.
 
+## Interface de prédiction d'un match
+
+L'interface accepte deux fichiers dans tout format vidéo décodable par FFmpeg,
+les convertit en MP4/H.264, extrait les poses puis affiche les probabilités, la
+confiance et les vidéos avec squelette motion :
+
+```bash
+pip install -e ".[ui,gnn]"
+kata-pipeline predict-ui
+```
+
+Le bouton de prédiction reste désactivé tant que les deux vidéos ne sont pas
+chargées. Les sources et fichiers de travail sont placés dans un dossier
+temporaire supprimé après chaque prédiction. Seuls les overlays conservés en
+mémoire peuvent être téléchargés ; **Prédire un autre match** réinitialise la
+session.
+
+Par défaut, l'app utilise `models/outcome.pt` et la configuration du run
+`runs/outcome_20260915_100930/config.yaml`. Ils peuvent être surchargés via
+`KATA_PREDICTION_MODEL` et `KATA_PREDICTION_CONFIG`.
+
 ### Relancer une étape
 
 Chaque étape sauvegarde ses résultats intermédiaires. Vous pouvez relancer n'importe quelle étape sans refaire les précédentes, tant que les fichiers intermédiaires existent.

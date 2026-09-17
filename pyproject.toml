@@ -24,7 +24,7 @@ dependencies = [
 
 [project.optional-dependencies]
 download = ["yt-dlp>=2026.8.19"]
-ui = ["streamlit>=1.28"]
+ui = ["streamlit>=1.41"]
 # Phase 2 : extraction de poses + Graph Neural Network
 gnn = [
     "mediapipe>=0.10",

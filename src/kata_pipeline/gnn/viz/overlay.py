@@ -29,6 +29,8 @@ from kata_pipeline.gnn.graph.skeleton import (
     SUBSET_LANDMARKS,
 )
 from kata_pipeline.gnn.pose.features import compute_node_features, sliding_windows
+from kata_pipeline.gnn.pose.sequence import PoseSequence
+from kata_pipeline.gnn.skeletons import SkeletonSchema
 
 logger = logging.getLogger(__name__)
 
@@ -101,11 +103,13 @@ def _draw_frame(
     vmax: float,
     trails: dict[str, list[tuple[int, int]]],
     node_importance: np.ndarray | None = None,
+    joint_names: tuple[str, ...] | list[str] = JOINT_NAMES,
+    edges: tuple[tuple[int, int], ...] | list[tuple[int, int]] = SKELETON_EDGES,
 ) -> None:
     """Dessine squelette, articulations, trainées et (option) importance."""
 
     # Arêtes.
-    for a, b in SKELETON_EDGES:
+    for a, b in edges:
         pa, pb = kp_px[a], kp_px[b]
         if np.any(np.isnan(pa)) or np.any(np.isnan(pb)):
             continue
@@ -119,7 +123,7 @@ def _draw_frame(
             cv2.line(canvas, pts[k - 1], pts[k], color, max(1, int(1 + 3 * alpha)))
 
     # Articulations.
-    for j, name in enumerate(JOINT_NAMES):
+    for j, name in enumerate(joint_names):
         p = kp_px[j]
         if np.any(np.isnan(p)):
             continue
@@ -223,6 +227,116 @@ def render_motion_overlay(
     cap.release()
     writer.release()
     logger.info("Vidéo mouvement écrite : %s", out_path)
+    return out_path
+
+
+def render_motion_overlay_from_sequence(
+    video_path: str | Path,
+    out_path: str | Path,
+    sequence: PoseSequence,
+    schema: SkeletonSchema,
+    confidence_threshold: float = 0.3,
+) -> Path:
+    """Rend l'overlay depuis des poses existantes, sans seconde extraction.
+
+    Les timestamps produits par l'extracteur servent à reprendre exactement
+    les images analysées dans la vidéo normalisée.
+    """
+
+    video_path = Path(video_path)
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    sequence.validate()
+    if sequence.num_joints != schema.num_joints:
+        raise ValueError(
+            f"La séquence contient {sequence.num_joints} articulations, "
+            f"le schéma {schema.name} en attend {schema.num_joints}."
+        )
+
+    cap = cv2.VideoCapture(str(video_path))
+    if not cap.isOpened():
+        raise FileNotFoundError(f"Impossible d'ouvrir la vidéo : {video_path}")
+    src_fps = cap.get(cv2.CAP_PROP_FPS) or float(sequence.metadata.get("src_fps", 25.0))
+    w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    if w <= 0 or h <= 0:
+        cap.release()
+        raise RuntimeError(f"Dimensions vidéo invalides : {video_path}")
+
+    timestamps = np.asarray(sequence.timestamps, dtype=np.float64)
+    if len(timestamps) > 1:
+        diffs = np.diff(timestamps)
+        positive = diffs[diffs > 1e-6]
+        output_fps = 1.0 / float(np.median(positive)) if positive.size else sequence.fps
+    else:
+        output_fps = sequence.fps
+    output_fps = max(1.0, float(output_fps))
+
+    kp_px = sequence.keypoints[:, :, :2].astype(np.float32).copy()
+    kp_px[:, :, 0] *= w
+    kp_px[:, :, 1] *= h
+    visible = sequence.valid_mask & (sequence.confidence >= confidence_threshold)
+    kp_px[~visible] = np.nan
+
+    vel = np.zeros_like(kp_px)
+    vel[1:] = kp_px[1:] - kp_px[:-1]
+    speed = np.linalg.norm(vel, axis=2)
+    vmax = float(np.nanpercentile(speed, 95)) if np.isfinite(speed).any() else 1.0
+    speed = np.nan_to_num(speed, nan=0.0)
+
+    writer = _open_writer(out_path, output_fps, (w, h))
+    if not writer.isOpened():
+        cap.release()
+        raise RuntimeError(f"Impossible de créer la vidéo d'overlay : {out_path}")
+
+    trail_names = [name for name in TRAIL_JOINTS if name in schema.joint_names]
+    trails: dict[str, list[tuple[int, int]]] = {name: [] for name in trail_names}
+    trail_indices = {name: schema.joint_names.index(name) for name in trail_names}
+    source_indices = np.rint(timestamps * src_fps).astype(int)
+
+    frame_i = 0
+    pose_i = 0
+    while pose_i < sequence.num_frames:
+        ok, frame = cap.read()
+        if not ok:
+            break
+        if frame_i < source_indices[pose_i]:
+            frame_i += 1
+            continue
+
+        for name, joint_i in trail_indices.items():
+            point = kp_px[pose_i, joint_i]
+            if not np.any(np.isnan(point)):
+                trails[name].append(tuple(point.astype(int)))
+                trails[name] = trails[name][-TRAIL_LENGTH:]
+
+        _draw_frame(
+            frame,
+            kp_px[pose_i],
+            speed[pose_i],
+            vmax,
+            trails,
+            joint_names=schema.joint_names,
+            edges=schema.edges,
+        )
+        cv2.putText(
+            frame,
+            "Mouvement: bleu = lent | rouge = rapide",
+            (12, 28),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.65,
+            (255, 255, 255),
+            2,
+        )
+        writer.write(frame)
+        pose_i += 1
+        frame_i += 1
+
+    cap.release()
+    writer.release()
+    if pose_i == 0:
+        raise RuntimeError(f"Aucune image d'overlay générée pour {video_path}")
+    logger.info("Vidéo mouvement depuis poses existantes écrite : %s", out_path)
     return out_path
 
 

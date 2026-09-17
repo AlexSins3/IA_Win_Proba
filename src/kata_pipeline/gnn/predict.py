@@ -21,13 +21,13 @@ import logging
 from pathlib import Path
 from typing import Any
 
-import numpy as np
 import torch
 
 from kata_pipeline.gnn.config import GNNConfig
 from kata_pipeline.gnn.data.dataset_hier import compute_in_channels
 from kata_pipeline.gnn.models.kata_model import KataOutcomeComparator
 from kata_pipeline.gnn.pose.base import build_extractor
+from kata_pipeline.gnn.pose.sequence import PoseSequence
 from kata_pipeline.gnn.preprocess import preprocess_sequence, sliding_windows
 from kata_pipeline.gnn.repro import get_device, load_checkpoint
 from kata_pipeline.gnn.skeletons import get_schema
@@ -35,9 +35,14 @@ from kata_pipeline.gnn.skeletons import get_schema
 logger = logging.getLogger(__name__)
 
 
-def _video_to_windows(video: str | Path, config: GNNConfig, schema, device) -> torch.Tensor:
-    extractor = build_extractor(config.pose, schema)
-    seq = extractor.extract(video)
+def _sequence_to_windows(
+    seq: PoseSequence,
+    config: GNNConfig,
+    schema,
+    device,
+) -> torch.Tensor:
+    """Transforme une séquence de poses déjà extraite en tenseur modèle."""
+
     pre = preprocess_sequence(seq, config.preprocess, schema)
     windows = sliding_windows(pre, config.preprocess)  # (Nw, C, T, J)
     if windows.shape[0] > config.preprocess.max_windows:
@@ -45,14 +50,30 @@ def _video_to_windows(video: str | Path, config: GNNConfig, schema, device) -> t
     return torch.from_numpy(windows).float().unsqueeze(0).to(device)  # (1, Nw, C, T, J)
 
 
-def predict_match(
-    video_a: str | Path,
-    video_b: str | Path,
+def _video_to_sequence(video: str | Path, config: GNNConfig, schema) -> PoseSequence:
+    extractor = build_extractor(config.pose, schema)
+    return extractor.extract(video)
+
+
+def _video_to_windows(video: str | Path, config: GNNConfig, schema, device) -> torch.Tensor:
+    """Compatibilité interne : extraction puis préparation d'une vidéo."""
+
+    seq = _video_to_sequence(video, config, schema)
+    return _sequence_to_windows(seq, config, schema, device)
+
+
+def predict_sequences(
+    sequence_a: PoseSequence,
+    sequence_b: PoseSequence,
     checkpoint: str | Path,
     config: GNNConfig,
     debug: bool = False,
 ) -> dict[str, Any]:
-    """Prédit le vainqueur entre deux prestations (anonyme, cohérent à l'échange)."""
+    """Prédit un match depuis deux séquences de poses déjà extraites.
+
+    Cette variante évite de relancer MediaPipe quand l'appelant a besoin des
+    poses pour d'autres sorties, par exemple une vidéo avec squelette.
+    """
 
     device = get_device()
     schema = get_schema(config.skeleton.schema_name)
@@ -68,8 +89,8 @@ def predict_match(
         )
     model.eval()
 
-    xa = _video_to_windows(video_a, config, schema, device)
-    xb = _video_to_windows(video_b, config, schema, device)
+    xa = _sequence_to_windows(sequence_a, config, schema, device)
+    xb = _sequence_to_windows(sequence_b, config, schema, device)
     ma = torch.ones(xa.shape[:2], device=device)
     mb = torch.ones(xb.shape[:2], device=device)
 
@@ -96,6 +117,7 @@ def predict_match(
         "confidence": round(confidence, 4),
     }
     if debug:
+        checkpoint_metrics = meta.get("metrics") or {}
         result["debug"] = {
             "p_b_given_AB": round(p_b_ab, 4),
             "p_a_given_BA": round(p_a_ba, 4),
@@ -104,5 +126,23 @@ def predict_match(
             "num_windows_b": int(xb.shape[1]),
             "in_channels": in_channels,
             "schema": schema.name,
+            "device": str(device),
+            "checkpoint_epoch": meta.get("epoch"),
+            "validation_accuracy": checkpoint_metrics.get("accuracy"),
+            "validation_roc_auc": checkpoint_metrics.get("roc_auc"),
         }
     return result
+
+
+def predict_match(
+    video_a: str | Path,
+    video_b: str | Path,
+    checkpoint: str | Path,
+    config: GNNConfig,
+    debug: bool = False,
+) -> dict[str, Any]:
+    """Prédit le vainqueur entre deux prestations (anonyme, cohérent à l'échange)."""
+    schema = get_schema(config.skeleton.schema_name)
+    sequence_a = _video_to_sequence(video_a, config, schema)
+    sequence_b = _video_to_sequence(video_b, config, schema)
+    return predict_sequences(sequence_a, sequence_b, checkpoint, config, debug=debug)
