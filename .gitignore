@@ -58,3 +58,6 @@ __azurite_db_*.json
 *.h5
 *.pkl
 *.pt
+
+# Checkpoint nécessaire à l'application Streamlit de prédiction.
+!models/outcome.pt
