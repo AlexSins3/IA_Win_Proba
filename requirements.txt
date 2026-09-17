@@ -2,4 +2,9 @@
 # Installe également le package local et la commande `kata-pipeline`.
 -e .[ui,gnn]
 
+<<<<<<< HEAD
 # FFmpeg et FFprobe sont requis sur le système pour convertir les vidéos.
+=======
+# Sur Streamlit Community Cloud, FFmpeg et les bibliothèques Linux d'OpenCV
+# sont installés depuis le fichier packages.txt.
+>>>>>>> 32e75bf (add requirements and packages)
