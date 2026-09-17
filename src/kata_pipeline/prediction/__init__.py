@@ -5,6 +5,7 @@ from kata_pipeline.prediction.pipeline import (
     extract_pose_sequence,
     normalize_video,
     pose_summary,
+    probable_match_score,
     probe_video,
     render_web_motion_overlay,
 )
@@ -14,6 +15,7 @@ __all__ = [
     "extract_pose_sequence",
     "normalize_video",
     "pose_summary",
+    "probable_match_score",
     "probe_video",
     "render_web_motion_overlay",
 ]

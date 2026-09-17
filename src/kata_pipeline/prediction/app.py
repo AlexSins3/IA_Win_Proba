@@ -18,6 +18,7 @@ from kata_pipeline.prediction.pipeline import (
     extract_pose_sequence,
     normalize_video,
     pose_summary,
+    probable_match_score,
     render_web_motion_overlay,
 )
 
@@ -237,6 +238,7 @@ def _render_results(bundle: dict[str, Any]) -> None:
     winner_number = "1" if winner == "A" else "2"
     winner_color = "#ef4444" if winner == "A" else "#3b82f6"
     confidence = float(prediction["confidence"])
+    winner_score, loser_score = probable_match_score(confidence)
 
     st.markdown(
         f"""
@@ -245,6 +247,10 @@ def _render_results(bundle: dict[str, Any]) -> None:
           <div class="winner-name">Vidéo {winner_number} gagnante</div>
           <div class="winner-confidence" style="color:{winner_color}">
             Écart entre les prestations : {confidence * 100:.1f} %
+          </div>
+          <div class="match-score">
+            Score le plus probable : <strong>{winner_score}–{loser_score}</strong>
+            pour la vidéo {winner_number}
           </div>
         </section>
         """,
@@ -262,6 +268,11 @@ def _render_results(bundle: dict[str, Any]) -> None:
     with probability_b:
         _render_probability("Vidéo 2", prediction["probability_b_wins"], "#3b82f6")
         st.metric("Score technique latent", f"{prediction['athlete_b']['quality_score']:.4f}")
+    st.caption(
+        "Le score technique latent est la valeur interne utilisée par le modèle pour "
+        "comparer la qualité des deux prestations : plus il est élevé, plus la prestation "
+        "est favorisée. Ce n'est ni une note sur 10 ou 100, ni un score officiel des juges."
+    )
 
     st.markdown("### Vidéos avec squelette motion")
     skeleton_a, skeleton_b = st.columns(2, gap="large")
@@ -412,6 +423,10 @@ def _inject_styles() -> None:
           .winner-kicker { font-size:.7rem; letter-spacing:.2em; color:#94a3b8; font-weight:800; }
           .winner-name { font-size:clamp(1.8rem,4vw,3rem); font-weight:850; margin:.25rem 0; }
           .winner-confidence { font-size:1rem; font-weight:750; }
+          .match-score { width:fit-content; margin:1rem auto 0; padding:.7rem 1.15rem;
+                         border:1px solid rgba(255,255,255,.18); border-radius:999px;
+                         background:rgba(255,255,255,.08); font-size:1.05rem; }
+          .match-score strong { color:white; font-size:1.25rem; }
           .probability-row { display:flex; justify-content:space-between; align-items:center;
                              font-size:1.15rem; margin-top:.4rem; }
           div[data-testid="stMetric"] { background:rgba(255,255,255,.72); border:1px solid #e2e8f0;

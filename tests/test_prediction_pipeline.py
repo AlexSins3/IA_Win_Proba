@@ -13,6 +13,7 @@ from kata_pipeline.gnn.skeletons import get_schema
 from kata_pipeline.prediction.pipeline import (
     normalize_video,
     pose_summary,
+    probable_match_score,
     probe_video,
     render_web_motion_overlay,
 )
@@ -45,6 +46,27 @@ def test_pose_summary_reports_detection_quality():
     assert summary["frame_detection_rate"] == 0.8
     assert summary["joint_detection_rate"] == 0.8
     assert summary["mean_joint_confidence"] == 1.0
+
+
+@pytest.mark.parametrize(
+    ("gap", "expected"),
+    [
+        (0.0, (3, 2)),
+        (0.0999, (3, 2)),
+        (0.10, (4, 1)),
+        (0.30, (4, 1)),
+        (0.3001, (5, 0)),
+        (1.0, (5, 0)),
+    ],
+)
+def test_probable_match_score_scale(gap, expected):
+    assert probable_match_score(gap) == expected
+
+
+@pytest.mark.parametrize("gap", [-0.01, 1.01])
+def test_probable_match_score_rejects_invalid_gap(gap):
+    with pytest.raises(ValueError):
+        probable_match_score(gap)
 
 
 @pytest.mark.skipif(not shutil.which("ffmpeg"), reason="ffmpeg absent")

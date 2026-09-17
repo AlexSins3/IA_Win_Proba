@@ -215,6 +215,22 @@ def pose_summary(sequence: PoseSequence, confidence_threshold: float = 0.3) -> d
     }
 
 
+def probable_match_score(probability_gap: float) -> tuple[int, int]:
+    """Projette l'écart de probabilité sur le barème de score du match.
+
+    Le tuple retourné est toujours ``(score du gagnant, score du perdant)``.
+    Les seuils 10 % et 30 % appartiennent à la tranche intermédiaire.
+    """
+
+    if not 0.0 <= probability_gap <= 1.0:
+        raise ValueError("L'écart de probabilité doit être compris entre 0 et 1.")
+    if probability_gap < 0.10:
+        return 3, 2
+    if probability_gap <= 0.30:
+        return 4, 1
+    return 5, 0
+
+
 def render_web_motion_overlay(
     video_path: str | Path,
     output_path: str | Path,
