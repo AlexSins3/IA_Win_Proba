@@ -1,0 +1,7 @@
+# Configuration phase 2 (poses + GNN) — profil rapide pour premier jet.
+# Surcharge les défauts de GNNConfig (voir src/kata_pipeline/gnn/config.py).
+# Usage : kata-pipeline gnn <commande> --config config/gnn.yaml
+
+pose:
+  model_complexity: 0      # 0=lite (rapide), 1=full, 2=heavy
+  target_fps: 10.0         # images de pose par seconde

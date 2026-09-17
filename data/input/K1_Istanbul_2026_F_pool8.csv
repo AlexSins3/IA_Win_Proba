@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Istanbul,Female Kata,Pool_1,1,Bui_Mai_Linh,Donofrio_Orsola,Gojushiho_Sho,Papuren,Shotokan,ShitoRyu,3,4,Donofrio_Orsola,flag,pool_8_pool_1,K1
+K1_Istanbul,Female Kata,Pool_1,2,Manca_Chiara,Lau_Mo_Sheung_Grace,Chibana_No_Kushanku,Suparinpei,ShitoRyu,ShitoRyu,0,7,Lau_Mo_Sheung_Grace,flag,pool_8_pool_1,K1
+K1_Istanbul,Female Kata,Pool_2,1,Donofrio_Orsola,Manca_Chiara,Chatanyara_Kushanku,Chatanyara_Kushanku,ShitoRyu,ShitoRyu,6,1,Donofrio_Orsola,flag,pool_8_pool_2,K1
+K1_Istanbul,Female Kata,Pool_2,2,Bui_Mai_Linh,Lau_Mo_Sheung_Grace,Gankaku,Tomari_Bassai,Shotokan,ShitoRyu,0,7,Lau_Mo_Sheung_Grace,flag,pool_8_pool_2,K1
+K1_Istanbul,Female Kata,Pool_3,1,Bui_Mai_Linh,Manca_Chiara,Gojushiho_Dai,Papuren,Shotokan,ShitoRyu,2,5,Manca_Chiara,flag,pool_8_pool_3,K1
+K1_Istanbul,Female Kata,Pool_3,2,Donofrio_Orsola,Lau_Mo_Sheung_Grace,Suparinpei,Unshu,ShitoRyu,ShitoRyu,0,7,Lau_Mo_Sheung_Grace,flag,pool_8_pool_3,K1

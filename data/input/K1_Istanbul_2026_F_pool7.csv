@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Istanbul,Female Kata,Pool_1,1,Iwatani_Azuki,Lo_Sum_Man,Papuren,Papuren,ShitoRyu,ShitoRyu,6,1,Iwatani_Azuki,flag,pool_7_pool_1,K1
+K1_Istanbul,Female Kata,Pool_1,2,Xenou_Georgia_Archontia,En_Nesyry_Aya,Anan_Dai,Gojushiho_Dai,ShitoRyu,Shotokan,6,1,Xenou_Georgia_Archontia,flag,pool_7_pool_1,K1
+K1_Istanbul,Female Kata,Pool_2,1,Lo_Sum_Man,Xenou_Georgia_Archontia,Chatanyara_Kushanku,Papuren,ShitoRyu,ShitoRyu,2,5,Xenou_Georgia_Archontia,flag,pool_7_pool_2,K1
+K1_Istanbul,Female Kata,Pool_2,2,Iwatani_Azuki,En_Nesyry_Aya,Chatanyara_Kushanku,Gojushiho_Sho,ShitoRyu,Shotokan,7,0,Iwatani_Azuki,flag,pool_7_pool_2,K1
+K1_Istanbul,Female Kata,Pool_3,1,Iwatani_Azuki,Xenou_Georgia_Archontia,Suparinpei,Chatanyara_Kushanku,ShitoRyu,ShitoRyu,6,1,Iwatani_Azuki,flag,pool_7_pool_3,K1
+K1_Istanbul,Female Kata,Pool_3,2,Lo_Sum_Man,En_Nesyry_Aya,Suparinpei,Gankaku,ShitoRyu,Shotokan,4,3,Lo_Sum_Man,flag,pool_7_pool_3,K1

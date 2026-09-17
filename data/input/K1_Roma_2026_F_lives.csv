@@ -1,0 +1,13 @@
+id_live,url,local_path,competition,category,section,useful_start,useful_end,analysis_quality,clip_quality,status,competition_type
+k1_roma_2026_f_pool1_pool_1,https://www.youtube.com/watch?v=HG3f6hzRdKA,data/input/k1_roma_2026_f_pool1.mp4,K1_Roma,Female Kata,pool_1_pool_1,641,1431,low,high,pending,K1
+k1_roma_2026_f_pool1_pool_2,https://www.youtube.com/watch?v=HG3f6hzRdKA,data/input/k1_roma_2026_f_pool1.mp4,K1_Roma,Female Kata,pool_1_pool_2,2386,3219,low,high,pending,K1
+k1_roma_2026_f_pool1_pool_3,https://www.youtube.com/watch?v=HG3f6hzRdKA,data/input/k1_roma_2026_f_pool1.mp4,K1_Roma,Female Kata,pool_1_pool_3,4116,4922,low,high,pending,K1
+k1_roma_2026_f_pool2_pool_1,https://www.youtube.com/watch?v=HG3f6hzRdKA,data/input/k1_roma_2026_f_pool1.mp4,K1_Roma,Female Kata,pool_2_pool_1,1500,2311,low,high,pending,K1
+k1_roma_2026_f_pool2_pool_2,https://www.youtube.com/watch?v=HG3f6hzRdKA,data/input/k1_roma_2026_f_pool1.mp4,K1_Roma,Female Kata,pool_2_pool_2,3296,4046,low,high,pending,K1
+k1_roma_2026_f_pool2_pool_3,https://www.youtube.com/watch?v=HG3f6hzRdKA,data/input/k1_roma_2026_f_pool1.mp4,K1_Roma,Female Kata,pool_2_pool_3,5010,5820,low,high,pending,K1
+k1_roma_2026_f_pool3_pool_1,https://www.youtube.com/watch?v=6r6IfFMAlmw,data/input/k1_roma_2026_f_pool3.mp4,K1_Roma,Female Kata,pool_3_pool_1,654,1426,low,high,pending,K1
+k1_roma_2026_f_pool3_pool_2,https://www.youtube.com/watch?v=6r6IfFMAlmw,data/input/k1_roma_2026_f_pool3.mp4,K1_Roma,Female Kata,pool_3_pool_2,2260,3104,low,high,pending,K1
+k1_roma_2026_f_pool3_pool_3,https://www.youtube.com/watch?v=6r6IfFMAlmw,data/input/k1_roma_2026_f_pool3.mp4,K1_Roma,Female Kata,pool_3_pool_3,4091,4917,low,high,pending,K1
+k1_roma_2026_f_pool4_pool_1,https://www.youtube.com/watch?v=6r6IfFMAlmw,data/input/k1_roma_2026_f_pool3.mp4,K1_Roma,Female Kata,pool_4_pool_1,1503,2064,low,high,pending,K1
+k1_roma_2026_f_pool4_pool_2,https://www.youtube.com/watch?v=6r6IfFMAlmw,data/input/k1_roma_2026_f_pool3.mp4,K1_Roma,Female Kata,pool_4_pool_2,3189,4013,low,high,pending,K1
+k1_roma_2026_f_pool4_pool_3,https://www.youtube.com/watch?v=6r6IfFMAlmw,data/input/k1_roma_2026_f_pool3.mp4,K1_Roma,Female Kata,pool_4_pool_3,4994,5740,low,high,pending,K1

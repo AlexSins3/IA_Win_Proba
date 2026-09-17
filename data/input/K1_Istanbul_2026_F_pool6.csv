@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Istanbul,Female Kata,Pool_1,1,Bleul_Jasmin,Nakaji_Hisami,Gojushiho_Sho,Chatanyara_Kushanku,Shotokan,ShitoRyu,1,6,Nakaji_Hisami,flag,pool_6_pool_1,K1
+K1_Istanbul,Female Kata,Pool_1,2,Cruz_Ana,Lehner_Tamara,Anan,Papuren,ShitoRyu,ShitoRyu,5,2,Cruz_Ana,flag,pool_6_pool_1,K1
+K1_Istanbul,Female Kata,Pool_2,1,Nakaji_Hisami,Cruz_Ana,Papuren,Papuren,ShitoRyu,ShitoRyu,5,2,Nakaji_Hisami,flag,pool_6_pool_2,K1
+K1_Istanbul,Female Kata,Pool_2,2,Bleul_Jasmin,Lehner_Tamara,Gojushiho_Dai,Chibana_No_Kushanku,Shotokan,ShitoRyu,5,2,Bleul_Jasmin,flag,pool_6_pool_2,K1
+K1_Istanbul,Female Kata,Pool_3,1,Bleul_Jasmin,Cruz_Ana,Suparinpei,Anan_Dai,Shotokan,ShitoRyu,2,0,Cruz_Ana,flag,pool_6_pool_3,K1
+K1_Istanbul,Female Kata,Pool_3,2,Nakaji_Hisami,Lehner_Tamara,Tomari_Bassai,Chatanyara_Kushanku,ShitoRyu,ShitoRyu,7,0,Nakaji_Hisami,flag,pool_6_pool_3,K1

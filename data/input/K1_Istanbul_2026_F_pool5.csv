@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Istanbul,Female Kata,Pool_1,1,Casale_Carola,Sadeghi_Dastak_Fatemeh,Suparinpei,Papuren,ShitoRyu,ShitoRyu,5,2,Casale_Carola,flag,pool_5_pool_1,K1
+K1_Istanbul,Female Kata,Pool_1,2,Marques_Rita,Raafat_Jana,Kururunfa,Gojushiho_Dai,ShitoRyu,Shotokan,4,3,Marques_Rita,flag,pool_5_pool_1,K1
+K1_Istanbul,Female Kata,Pool_2,1,Sadeghi_Dastak_Fatemeh,Marques_Rita,Suparinpei,Ohan_Dai,ShitoRyu,ShitoRyu,6,1,Sadeghi_Dastak_Fatemeh,flag,pool_5_pool_2,K1
+K1_Istanbul,Female Kata,Pool_2,2,Casale_Carola,Raafat_Jana,Papuren,Gojushiho_Sho,ShitoRyu,Shotokan,7,0,Casale_Carola,flag,pool_5_pool_2,K1
+K1_Istanbul,Female Kata,Pool_3,1,Casale_Carola,Marques_Rita,Kururunfa,Suparinpei,ShitoRyu,ShitoRyu,7,0,Casale_Carola,flag,pool_5_pool_3,K1
+K1_Istanbul,Female Kata,Pool_3,2,Sadeghi_Dastak_Fatemeh,Raafat_Jana,Chibana_No_Kushanku,Unsu,ShitoRyu,Shotokan,7,0,Sadeghi_Dastak_Fatemeh,flag,pool_5_pool_3,K1

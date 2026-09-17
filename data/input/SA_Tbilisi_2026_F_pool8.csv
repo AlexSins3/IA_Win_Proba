@@ -1,0 +1,14 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section
+SA_Tbilisi,Female Kata,T1,1,Arslan_Sule_Zeynep,Abdalghany_Maryam,Gojushiho_Dai,Kanku_Sho,Shotokan,Shotokan,3,2,Arslan_Sule_Zeynep,flag,pool_8_t1
+SA_Tbilisi,Female Kata,T1,2,Hebbel_Patricia,Severan_Lea,Ohan_Dai,Gojushiho_Dai,ShitoRyu,Shotokan,0,5,Severan_Lea,flag,pool_8_t1
+SA_Tbilisi,Female Kata,T1,3,Marques_Rita,Donofrio_Orsola,Kururunfa,Kururunfa,ShitoRyu,ShitoRyu,1,4,Donofrio_Orsola,flag,pool_8_t1
+SA_Tbilisi,Female Kata,T1,4,Baneasu_Michelle,Muzurovic_Ilda,Sochin,Gojushiho_Sho,Shotokan,Shotokan,0,5,Muzurovic_Ilda,flag,pool_8_t1
+SA_Tbilisi,Female Kata,T1,5,Grgic_Inga,Preda_Giada,Gojushiho_Dai,Anan_Dai,Shotokan,ShitoRyu,5,0,Grgic_Inga,flag,pool_8_t1
+SA_Tbilisi,Female Kata,T1,6,Taranenko_Sofiia,Lennik_Aleksandra,Gojushiho_Sho,Papuren,Shotokan,ShitoRyu,1,4,Lennik_Aleksandra,flag,pool_8_t1
+SA_Tbilisi,Female Kata,T2,1,Arslan_Sule_Zeynep,Severan_Lea,Gojushiho_Sho,Gojushiho_Sho,Shotokan,Shotokan,2,3,Severan_Lea,flag,pool_8_t2
+SA_Tbilisi,Female Kata,T2,2,Donofrio_Orsola,Abedi_Bahar,Anan_Dai,Papuren,ShitoRyu,ShitoRyu,5,0,Donofrio_Orsola,flag,pool_8_t2
+SA_Tbilisi,Female Kata,T2,3,Muzurovic_Ilda,Grgic_Inga,Gojushiho_Dai,Kanku_Sho,Shotokan,Shotokan,4,1,Muzurovic_Ilda,flag,pool_8_t2
+SA_Tbilisi,Female Kata,T2,4,Lennik_Aleksandra,Nakaji_Hisami,Anan_Dai,Suparinpei,ShitoRyu,ShitoRyu,1,4,Nakaji_Hisami,flag,pool_8_t2
+SA_Tbilisi,Female Kata,T3,1,Severan_Lea,Donofrio_Orsola,Suparinpei,Chibana_No_Kushanku,Shotokan,ShitoRyu,3,2,Severan_Lea,flag,pool_8_t3
+SA_Tbilisi,Female Kata,T3,2,Muzurovic_Ilda,Nakaji_Hisami,Nijushiho,Tomari_Bassai,Shotokan,ShitoRyu,0,5,Nakaji_Hisami,flag,pool_8_t3
+SA_Tbilisi,Female Kata,PW1,1,Severan_Lea,Nakaji_Hisami,Unsu,Chatanyara_Kushanku,Shotokan,ShitoRyu,0,5,Nakaji_Hisami,flag,pool_8_pw1

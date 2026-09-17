@@ -1,0 +1,78 @@
+pose:
+  target_fps: 10.0
+  model_complexity: 1
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+  use_subset: true
+  extractor: mediapipe
+  device: auto
+  batch_size: 1
+  mmpose_pose_config: null
+  mmpose_checkpoint: null
+  mmpose_det_config: null
+  mmpose_det_checkpoint: null
+graph:
+  window_size: 120
+  window_stride: 60
+  normalize: true
+skeleton:
+  schema_name: mediapipe_15
+preprocess:
+  confidence_threshold: 0.3
+  max_interp_gap_seconds: 0.5
+  smoothing: none
+  smoothing_window: 5
+  normalization: torso
+  rotate_align: false
+  use_z: true
+  streams:
+  - joint
+  - joint_motion
+  use_acceleration: false
+  use_angles: true
+  use_confidence: true
+  use_masks: false
+  window_duration_seconds: 12.0
+  window_stride_seconds: 6.0
+  max_windows: 16
+model:
+  in_channels: 9
+  hidden_channels: 64
+  embedding_dim: 128
+  num_layers: 3
+  dropout: 0.3
+  num_flag_classes: 6
+  encoder: stgcn
+  aggregator: mean
+  context_residual: false
+  max_windows: 16
+train:
+  batch_size: 8
+  epochs: 60
+  lr: 0.001
+  weight_decay: 0.0001
+  val_ratio: 0.2
+  seed: 42
+  competition_type: null
+  split_by: match
+  deterministic: false
+  w_outcome: 1.0
+  w_flag: 0.5
+  w_score: 0.5
+paths:
+  clips_dir: data\clips
+  output_dir: data\output
+  poses_dir: data\poses
+  models_dir: models
+  viz_dir: data\viz
+  runs_dir: runs
+archive:
+  enabled: false
+  root_folder_id: null
+  remote_clips_path: clips
+  credentials_file: .secrets\google_drive_credentials.json
+  token_file: .secrets\google_drive_token.json
+  index_file: data\archive\drive_videos.csv
+  cache_dir: data\cache\videos
+  cache_max_gb: 10.0
+  verify_md5: true

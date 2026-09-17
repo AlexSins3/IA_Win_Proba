@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Istanbul,Female Kata,Pool_1,1,Taily_Helvetia,Roversi_Elena,Gojushiho_Dai,Papuren,Shotokan,ShitoRyu,5,2,Taily_Helvetia,flag,pool_4_pool_1,K1
+K1_Istanbul,Female Kata,Pool_1,2,Colak_Keyda_Nur,Ono_Maho,Papuren,Nipaipo,ShitoRyu,ShitoRyu,2,5,Ono_Maho,flag,pool_4_pool_1,K1
+K1_Istanbul,Female Kata,Pool_2,1,Roversi_Elena,Colak_Keyda_Nur,Chatanyara_Kushanku,Chatanyara_Kushanku,ShitoRyu,ShitoRyu,0,7,Colak_Keyda_Nur,flag,pool_4_pool_2,K1
+K1_Istanbul,Female Kata,Pool_2,2,Taily_Helvetia,Ono_Maho,Gankaku,Suparinpei,Shotokan,ShitoRyu,0,7,Ono_Maho,flag,pool_4_pool_2,K1
+K1_Istanbul,Female Kata,Pool_3,1,Taily_Helvetia,Colak_Keyda_Nur,Unsu,Suparinpei,Shotokan,ShitoRyu,3,4,Colak_Keyda_Nur,flag,pool_4_pool_3,K1
+K1_Istanbul,Female Kata,Pool_3,2,Roversi_Elena,Ono_Maho,Suparinpei,Papuren,ShitoRyu,ShitoRyu,0,7,Ono_Maho,flag,pool_4_pool_3,K1

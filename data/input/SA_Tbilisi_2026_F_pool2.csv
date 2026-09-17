@@ -1,0 +1,15 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section
+SA_Tbilisi,Female Kata,T1,1,Marchetti_Giulia,Ondrouskova_Amalie,Papuren,Gojushiho_Dai,ShitoRyu,Shotokan,3,2,Marchetti_Giulia,flag,pool_2_t1
+SA_Tbilisi,Female Kata,T1,2,Cigirdik_Hayrulnisa,Baravik_Veranika,Papuren,Ohan_Dai,ShitoRyu,ShitoRyu,1,4,Baravik_Veranika,flag,pool_2_t1
+SA_Tbilisi,Female Kata,T1,3,Singhi_Mesom,Turakulova_Durdona,Papuren,Papuren,ShitoRyu,ShitoRyu,4,1,Singhi_Mesom,flag,pool_2_t1
+SA_Tbilisi,Female Kata,T1,4,Kirschnerova_Alice_Jana,Khamis_Jana,Suparinpei,Kanku_Sho,ShitoRyu,Shotokan,0,5,Khamis_Jana,flag,pool_2_t1
+SA_Tbilisi,Female Kata,T1,5,Ordonez_Ines,Nilsson_Sara_Lonbaek,Papuren,Anan,ShitoRyu,ShitoRyu,5,0,Ordonez_Ines,flag,pool_2_t1
+SA_Tbilisi,Female Kata,T1,6,Cottingham_Emmersyn,Shakibafar_Masoumeh,Ohan,Gankaku,ShitoRyu,Shotokan,3,2,Cottingham_Emmersyn,flag,pool_2_t1
+SA_Tbilisi,Female Kata,T1,7,Armada_Ruiz_Andrea,Miko_Fukuoka,Anan_Dai,Papuren,ShitoRyu,ShitoRyu,0,5,Miko_Fukuoka,flag,pool_2_t1
+SA_Tbilisi,Female Kata,T2,1,Marchetti_Giulia,Baravik_Veranika,Chibana_No_Kushanku,Anan_Dai,ShitoRyu,ShitoRyu,2,3,Baravik_Veranika,flag,pool_2_t2
+SA_Tbilisi,Female Kata,T2,2,Singhi_Mesom,Khamis_Jana,Ohan_Dai,Enpi,ShitoRyu,Shotokan,2,3,Khamis_Jana,flag,pool_2_t2
+SA_Tbilisi,Female Kata,T2,3,Ordonez_Ines,Cottingham_Emmersyn,Chatanyara_Kushanku,Ohan_Dai,ShitoRyu,ShitoRyu,3,2,Ordonez_Ines,flag,pool_2_t2
+SA_Tbilisi,Female Kata,T2,4,Miko_Fukuoka,Siebert_Rita,Suparinpei,Ohan_Dai,ShitoRyu,ShitoRyu,5,0,Miko_Fukuoka,flag,pool_2_t2
+SA_Tbilisi,Female Kata,T3,1,Baravik_Veranika,Khamis_Jana,Anan,Unsu,ShitoRyu,Shotokan,3,2,Baravik_Veranika,flag,pool_2_t3
+SA_Tbilisi,Female Kata,T3,2,Ordonez_Ines,Miko_Fukuoka,Chibana_No_Kushanku,Nipaipo,ShitoRyu,ShitoRyu,0,5,Miko_Fukuoka,flag,pool_2_t3
+SA_Tbilisi,Female Kata,PW1,1,Baravik_Veranika,Miko_Fukuoka,Nipaipo,Tomari_Bassai,ShitoRyu,ShitoRyu,0,5,Miko_Fukuoka,flag,pool_2_pw1

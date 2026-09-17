@@ -1,0 +1,59 @@
+# Baseline reproductible de la phase 2 : reproduit fidèlement le comportement
+# actuel de la pipeline (MediaPipe 15 joints + ST-GCN, embedding 128D).
+# Sert de point de comparaison stable pour toute amélioration future.
+#
+# Usage :
+#   kata-pipeline gnn extract-poses     --config config/baseline_mediapipe_15j_stgcn.yaml
+#   kata-pipeline gnn train-comparator  --config config/baseline_mediapipe_15j_stgcn.yaml
+
+pose:
+  target_fps: 10.0            # fps effectif d'échantillonnage des poses
+  model_complexity: 0         # 0=lite (rapide) — cohérent avec l'extraction en cours
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+graph:
+  window_size: 120            # 120 frames @ 10 fps = 12 s
+  window_stride: 60           # recouvrement 50 %
+  normalize: true             # centrage bassin + échelle torse
+
+model:
+  in_channels: 9              # [x, y, z, vx, vy, vz, |v|, angle, conf]
+  hidden_channels: 64
+  embedding_dim: 128
+  num_layers: 3
+  dropout: 0.3
+  num_flag_classes: 6         # drapeaux WKF 0..5
+
+train:
+  competition_type: null       # null = SA + K1 ; sinon SA ou K1
+  batch_size: 8
+  epochs: 60
+  lr: 0.001
+  weight_decay: 0.0001
+  val_ratio: 0.2
+  seed: 42
+  split_by: match             # baseline : deux katas d'un match restent ensemble
+  deterministic: true         # reproductibilité stricte
+  w_outcome: 1.0
+  w_flag: 0.5
+  w_score: 0.5
+
+paths:
+  clips_dir: data/clips
+  output_dir: data/output
+  poses_dir: data/poses
+  models_dir: models
+  viz_dir: data/viz
+  runs_dir: runs
+
+archive:
+  enabled: false
+  root_folder_id: null
+  remote_clips_path: clips
+  credentials_file: .secrets/google_drive_credentials.json
+  token_file: .secrets/google_drive_token.json
+  index_file: data/archive/drive_videos.csv
+  cache_dir: data/cache/videos
+  cache_max_gb: 10.0
+  verify_md5: true

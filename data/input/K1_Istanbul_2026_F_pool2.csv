@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Istanbul,Female Kata,Pool_1,1,Wong_Sze_Man,Siebert_Rita,Kururunfa,Chatanyara_Kushanku,ShitoRyu,ShitoRyu,6,1,Wong_Sze_Man,flag,pool_2_pool_1,K1
+K1_Istanbul,Female Kata,Pool_1,2,Garcia_Lozano_Paola,Mishima_Kiri,Chatanyara_Kushanku,Suparinpei,ShitoRyu,ShitoRyu,2,5,Mishima_Kiri,flag,pool_2_pool_1,K1
+K1_Istanbul,Female Kata,Pool_2,1,Siebert_Rita,Garcia_Lozano_Paola,Anan_Dai,Papuren,ShitoRyu,ShitoRyu,0,7,Garcia_Lozano_Paola,flag,pool_2_pool_2,K1
+K1_Istanbul,Female Kata,Pool_2,2,Wong_Sze_Man,Mishima_Kiri,Suparinpei,Papuren,ShitoRyu,ShitoRyu,7,0,Wong_Sze_Man,flag,pool_2_pool_2,K1
+K1_Istanbul,Female Kata,Pool_3,1,Wong_Sze_Man,Garcia_Lozano_Paola,Papuren,Suparinpei,ShitoRyu,ShitoRyu,1,6,Garcia_Lozano_Paola,flag,pool_2_pool_3,K1
+K1_Istanbul,Female Kata,Pool_3,2,Siebert_Rita,Mishima_Kiri,Ohan_Dai,Nipaipo,ShitoRyu,ShitoRyu,0,7,Mishima_Kiri,flag,pool_2_pool_3,K1

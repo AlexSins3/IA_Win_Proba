@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Roma,Female Kata,Pool_1,1,Colak_Keyda_Nur,Siebert_Rita,Papuren,Chatanyara_Kushanku,ShitoRyu,ShitoRyu,6,1,Colak_Keyda_Nur,flag,pool_3_pool_1,K1
+K1_Roma,Female Kata,Pool_1,2,Shimizu_Natsuki,Khamis_Jana,Kururunfa,Gojushiho_Sho,ShitoRyu,Shotokan,7,0,Shimizu_Natsuki,flag,pool_3_pool_1,K1
+K1_Roma,Female Kata,Pool_2,1,Siebert_Rita,Shimizu_Natsuki,Papuren,Shisochin,ShitoRyu,ShitoRyu,1,6,Shimizu_Natsuki,flag,pool_3_pool_2,K1
+K1_Roma,Female Kata,Pool_2,2,Colak_Keyda_Nur,Khamis_Jana,Suparinpei,Gojushiho_Dai,ShitoRyu,Shotokan,6,1,Colak_Keyda_Nur,flag,pool_3_pool_2,K1
+K1_Roma,Female Kata,Pool_3,1,Colak_Keyda_Nur,Shimizu_Natsuki,Chatanyara_Kushanku,Papuren,ShitoRyu,ShitoRyu,0,7,Shimizu_Natsuki,flag,pool_3_pool_3,K1
+K1_Roma,Female Kata,Pool_3,2,Siebert_Rita,Khamis_Jana,Suparinpei,Unsu,ShitoRyu,Shotokan,3,4,Khamis_Jana,flag,pool_3_pool_3,K1

@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Roma,Female Kata,Pool_1,1,Xenou_Georgia_Archontia,Marques_Rita,Anan_Dai,Anan_Dai,ShitoRyu,ShitoRyu,5,2,Xenou_Georgia_Archontia,flag,pool_4_pool_1,K1
+K1_Roma,Female Kata,Pool_1,2,Taily_Helvetia,Ono_Maho,Gojushiho_Sho,Nipaipo,Shotokan,ShitoRyu,0,7,Ono_Maho,flag,pool_4_pool_1,K1
+K1_Roma,Female Kata,Pool_2,1,Marques_Rita,Taily_Helvetia,Suparinpei,Unsu,ShitoRyu,Shotokan,0,7,Taily_Helvetia,flag,pool_4_pool_2,K1
+K1_Roma,Female Kata,Pool_2,2,Xenou_Georgia_Archontia,Ono_Maho,Papuren,Papuren,ShitoRyu,ShitoRyu,0,7,Ono_Maho,flag,pool_4_pool_2,K1
+K1_Roma,Female Kata,Pool_3,1,Xenou_Georgia_Archontia,Taily_Helvetia,Chatanyara_Kushanku,Gankaku,ShitoRyu,Shotokan,3,4,Taily_Helvetia,flag,pool_4_pool_3,K1
+K1_Roma,Female Kata,Pool_3,2,Marques_Rita,Ono_Maho,Kururunfa,Suparinpei,ShitoRyu,ShitoRyu,1,6,Ono_Maho,flag,pool_4_pool_3,K1

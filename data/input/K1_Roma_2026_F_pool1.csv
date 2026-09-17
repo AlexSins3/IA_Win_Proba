@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Roma,Female Kata,Pool_1,1,Garcia_Lozano_Paola,Zervou_Eleni,Kururunfa,Papuren,ShitoRyu,ShitoRyu,7,0,Garcia_Lozano_Paola,flag,pool_1_pool_1,K1
+K1_Roma,Female Kata,Pool_1,2,Manca_Chiara,Leong_Wai_Yee_Shannon,Papuren,Anan_Dai,ShitoRyu,ShitoRyu,6,1,Manca_Chiara,flag,pool_1_pool_1,K1
+K1_Roma,Female Kata,Pool_2,1,Zervou_Eleni,Manca_Chiara,Chatanyara_Kushanku,Chibana_No_Kushanku,ShitoRyu,ShitoRyu,0,7,Manca_Chiara,flag,pool_1_pool_2,K1
+K1_Roma,Female Kata,Pool_2,2,Garcia_Lozano_Paola,Leong_Wai_Yee_Shannon,Chibana_No_Kushanku,Suparinpei,ShitoRyu,ShitoRyu,7,0,Garcia_Lozano_Paola,flag,pool_1_pool_2,K1
+K1_Roma,Female Kata,Pool_3,1,Garcia_Lozano_Paola,Manca_Chiara,Papuren,Chatanyara_Kushanku,ShitoRyu,ShitoRyu,6,1,Garcia_Lozano_Paola,flag,pool_1_pool_3,K1
+K1_Roma,Female Kata,Pool_3,2,Zervou_Eleni,Leong_Wai_Yee_Shannon,Anan_Dai,Ohan_Dai,ShitoRyu,ShitoRyu,3,4,Leong_Wai_Yee_Shannon,flag,pool_1_pool_3,K1

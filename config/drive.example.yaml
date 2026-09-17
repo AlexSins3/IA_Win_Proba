@@ -1,0 +1,12 @@
+# Copier en config/drive.local.yaml puis renseigner l'ID du dossier Drive `data`.
+# Les secrets OAuth restent dans .secrets/ et ne doivent jamais être commités.
+archive:
+  enabled: true
+  root_folder_id: "A_REMPLACER_PAR_ID_DU_DOSSIER_DATA"
+  remote_clips_path: clips
+  credentials_file: .secrets/google_drive_credentials.json
+  token_file: .secrets/google_drive_token.json
+  index_file: data/archive/drive_videos.csv
+  cache_dir: data/cache/videos
+  cache_max_gb: 10.0
+  verify_md5: true

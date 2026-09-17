@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Roma,Female Kata,Pool_1,1,Fabian_Csenge_Zita,Bozan_Dilara,Papuren,Kururunfa,ShitoRyu,ShitoRyu,0,7,Bozan_Dilara,flag,pool_2_pool_1,K1
+K1_Roma,Female Kata,Pool_1,2,Andrade_Henrique_Gabrielle,Donofrio_Terryana,Chatanyara_Kushanku,Papuren,ShitoRyu,ShitoRyu,1,6,Donofrio_Terryana,flag,pool_2_pool_1,K1
+K1_Roma,Female Kata,Pool_2,1,Bozan_Dilara,Andrade_Henrique_Gabrielle,Anan_Dai,Papuren,ShitoRyu,ShitoRyu,5,2,Bozan_Dilara,flag,pool_2_pool_2,K1
+K1_Roma,Female Kata,Pool_2,2,Fabian_Csenge_Zita,Donofrio_Terryana,Chibana_No_Kushanku,Kururunfa,ShitoRyu,ShitoRyu,0,7,Donofrio_Terryana,flag,pool_2_pool_2,K1
+K1_Roma,Female Kata,Pool_3,1,Fabian_Csenge_Zita,Andrade_Henrique_Gabrielle,Chatanyara_Kushanku,Anan_Dai,ShitoRyu,ShitoRyu,0,7,Andrade_Henrique_Gabrielle,flag,pool_2_pool_3,K1
+K1_Roma,Female Kata,Pool_3,2,Bozan_Dilara,Donofrio_Terryana,Papuren,Chatanyara_Kushanku,ShitoRyu,ShitoRyu,1,6,Donofrio_Terryana,flag,pool_2_pool_3,K1

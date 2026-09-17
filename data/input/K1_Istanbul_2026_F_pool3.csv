@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Istanbul,Female Kata,Pool_1,1,Shimizu_Natsuki,Donofrio_Terryana,Suparinpei,Papuren,ShitoRyu,ShitoRyu,6,1,Shimizu_Natsuki,flag,pool_3_pool_1,K1
+K1_Istanbul,Female Kata,Pool_1,2,Fernandes_Natacha,Turemen_Damla_Su,Papuren,Gojushiho_Dai,ShitoRyu,Shotokan,5,2,Fernandes_Natacha,flag,pool_3_pool_1,K1
+K1_Istanbul,Female Kata,Pool_2,1,Donofrio_Terryana,Fernandes_Natacha,Kururunfa,Suparinpei,ShitoRyu,ShitoRyu,5,2,Donofrio_Terryana,flag,pool_3_pool_2,K1
+K1_Istanbul,Female Kata,Pool_2,2,Shimizu_Natsuki,Turemen_Damla_Su,Shisochin,Unsu,ShitoRyu,Shotokan,7,0,Shimizu_Natsuki,flag,pool_3_pool_2,K1
+K1_Istanbul,Female Kata,Pool_3,1,Shimizu_Natsuki,Fernandes_Natacha,Kururunfa,Nipaipo,ShitoRyu,ShitoRyu,7,0,Shimizu_Natsuki,flag,pool_3_pool_3,K1
+K1_Istanbul,Female Kata,Pool_3,2,Donofrio_Terryana,Turemen_Damla_Su,Chibana_No_Kushanku,Gojushiho_Sho,ShitoRyu,Shotokan,5,2,Donofrio_Terryana,flag,pool_3_pool_3,K1

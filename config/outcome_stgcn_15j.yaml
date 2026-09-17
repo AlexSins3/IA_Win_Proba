@@ -1,0 +1,66 @@
+# Configuration de la tâche d'ISSUE (pipeline hiérarchique opt-in).
+#
+# Réutilise les poses déjà extraites (data/poses/*.npz, format legacy ou
+# canonique). Le modèle encode toutes les fenêtres d'une prestation puis les
+# agrège, et compare deux prestations de façon antisymétrique.
+#
+# Lancement :
+#   kata-pipeline gnn train-outcome     -c config/outcome_stgcn_15j.yaml
+#   kata-pipeline gnn evaluate-outcome  -c config/outcome_stgcn_15j.yaml
+#   kata-pipeline gnn predict-match A.mp4 B.mp4 -c config/outcome_stgcn_15j.yaml
+
+pose:
+  target_fps: 10.0
+  model_complexity: 0
+  extractor: mediapipe
+
+skeleton:
+  schema_name: mediapipe_15
+
+preprocess:
+  confidence_threshold: 0.3
+  max_interp_gap_seconds: 0.5
+  smoothing: none
+  normalization: torso
+  rotate_align: false
+  use_z: true
+  streams: [joint, joint_motion]
+  use_acceleration: false
+  use_angles: true
+  use_confidence: true
+  use_masks: false
+  window_duration_seconds: 12.0
+  window_stride_seconds: 6.0
+  max_windows: 16
+
+model:
+  hidden_channels: 64
+  embedding_dim: 128
+  num_layers: 3
+  dropout: 0.3
+  encoder: stgcn          # stgcn | multistream_stgcn
+  aggregator: mean        # mean | attention
+  context_residual: false
+  max_windows: 16
+
+train:
+  competition_type: null  # null = SA + K1 ; sinon SA ou K1
+  batch_size: 4
+  epochs: 60
+  lr: 0.001
+  weight_decay: 0.0001
+  val_ratio: 0.2
+  seed: 42
+  deterministic: true
+  split_by: match         # match | athlete | competition
+
+archive:
+  enabled: false
+  root_folder_id: null
+  remote_clips_path: clips
+  credentials_file: .secrets/google_drive_credentials.json
+  token_file: .secrets/google_drive_token.json
+  index_file: data/archive/drive_videos.csv
+  cache_dir: data/cache/videos
+  cache_max_gb: 10.0
+  verify_md5: true

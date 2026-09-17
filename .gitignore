@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets et jetons OAuth locaux
+.secrets/
+config/drive.local.yaml
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Data (ne pas commiter les vidéos ni les gros datasets)
+data/input/*.mp4
+data/input/*.mkv
+data/input/*.webm
+data/intermediate/*.mp4
+data/intermediate/*.json
+data/clips/**/*.mp4
+data/viz/**/*.mp4
+data/cache/videos/
+data/archive/drive_videos.csv
+data/output/*.csv
+data/output/*.parquet
+
+# Garder la structure
+!data/**/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Coverage
+.coverage
+htmlcov/
+
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+__azurite_db_*.json
+*.h5
+*.pkl
+*.pt

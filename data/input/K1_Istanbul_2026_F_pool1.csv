@@ -1,0 +1,7 @@
+competition,category,round,match_order,athlete_red,athlete_blue,kata_red,kata_blue,style_red,style_blue,flag_result_red,flag_result_blue,winner,decision_type,section,competition_type
+K1_Istanbul,Female Kata,Pool_1,1,Fabian_Csenge_Zita,Alforte_Sakura,Papuren,Paiku,ShitoRyu,ShitoRyu,2,5,Alforte_Sakura,flag,pool_1_pool_1,K1
+K1_Istanbul,Female Kata,Pool_1,2,Ederar_Miriam,Khamis_Jana,Suparinpei,Gojushiho_Dai,ShitoRyu,Shotokan,3,4,Khamis_Jana,flag,pool_1_pool_1,K1
+K1_Istanbul,Female Kata,Pool_2,1,Alforte_Sakura,Ederar_Miriam,Anan,Anan_Dai,ShitoRyu,ShitoRyu,2,5,Ederar_Miriam,flag,pool_1_pool_2,K1
+K1_Istanbul,Female Kata,Pool_2,2,Fabian_Csenge_Zita,Khamis_Jana,Chibana_No_Kushanku,Unsu,ShitoRyu,Shotokan,3,4,Khamis_Jana,flag,pool_1_pool_2,K1
+K1_Istanbul,Female Kata,Pool_3,1,Fabian_Csenge_Zita,Ederar_Miriam,Chatanyara_Kushanku,Papuren,ShitoRyu,ShitoRyu,3,4,Ederar_Miriam,flag,pool_1_pool_3,K1
+K1_Istanbul,Female Kata,Pool_3,2,Alforte_Sakura,Khamis_Jana,Chibana_No_Kushanku,Gojushiho_Sho,ShitoRyu,Shotokan,5,2,Alforte_Sakura,flag,pool_1_pool_3,K1

@@ -1,0 +1,125 @@
+# Durées de référence des katas (en secondes)
+# Source: 76 clips validés manuellement - SA A Coruña 2026 Female Kata
+# Les durées incluent ~3s de marge avant et ~3s après le kata réel
+# 
+# Usage dans la pipeline:
+#   - Filtrer les segments trop courts/longs pour un kata donné
+#   - Valider les détections automatiques
+#   - Estimer la confiance d'un alignement
+
+# Stats globales (tous katas confondus)
+global:
+  count: 76
+  min: 104.4
+  max: 252.2
+  mean: 186.8
+  # Bornes de sécurité recommandées (rejeter en dehors)
+  safe_min: 90.0    # ~15s sous le min observé
+  safe_max: 280.0   # ~30s au-dessus du max observé
+
+# Stats par kata (N = nombre d'occurrences validées)
+katas:
+  Anan:
+    n: 2
+    min: 142.2
+    max: 161.4
+    mean: 151.8
+  Anan_Dai:
+    n: 10
+    min: 152.8
+    max: 198.4
+    mean: 172.6
+  Chatanyara_Kushanku:
+    n: 11
+    min: 148.8
+    max: 232.8
+    mean: 191.2
+  Chibana_No_Kushanku:
+    n: 5
+    min: 161.4
+    max: 208.4
+    mean: 192.2
+  Gojushiho_Dai:
+    n: 3
+    min: 177.8
+    max: 197.4
+    mean: 184.3
+  Gojushiho_Sho:
+    n: 3
+    min: 175.5
+    max: 224.0
+    mean: 193.3
+  Kanku_Sho:
+    n: 1
+    min: 135.0
+    max: 135.0
+    mean: 135.0
+  Kishimoto_No_Kushanku:
+    n: 3
+    min: 155.6
+    max: 197.0
+    mean: 172.5
+  Kururunfa:
+    n: 3
+    min: 116.0
+    max: 150.2
+    mean: 131.7
+  Nipaipo:
+    n: 1
+    min: 148.8
+    max: 148.8
+    mean: 148.8
+  Ohan:
+    n: 1
+    min: 149.6
+    max: 149.6
+    mean: 149.6
+  Ohan_Dai:
+    n: 5
+    min: 104.4
+    max: 192.4
+    mean: 151.2
+  Oyadomari_No_Passai:
+    n: 1
+    min: 176.0
+    max: 176.0
+    mean: 176.0
+  Papuren:
+    n: 19
+    min: 130.6
+    max: 252.0
+    mean: 208.9
+  Sansai:
+    n: 1
+    min: 174.2
+    max: 174.2
+    mean: 174.2
+  Suparinpei:
+    n: 6
+    min: 199.6
+    max: 252.2
+    mean: 231.8
+  Tomari_Bassai:
+    n: 1
+    min: 160.0
+    max: 160.0
+    mean: 160.0
+
+# Regroupement par famille (pour cas où le kata exact est inconnu)
+families:
+  kushanku:  # Chatanyara, Chibana, Kishimoto, Kanku_Sho
+    min: 135.0
+    max: 232.8
+    mean: 188.0
+  gojushiho:  # Dai et Sho
+    min: 175.5
+    max: 224.0
+    mean: 188.8
+  court:  # Kururunfa, Kanku_Sho, Anan, Nipaipo, Ohan
+    min: 116.0
+    max: 161.4
+    mean: 143.0
+  long:  # Papuren, Suparinpei
+    min: 130.6
+    max: 252.2
+    mean: 215.0

@@ -1,0 +1,64 @@
+# Configuration par défaut de la pipeline kata
+
+# Paramètres vidéo
+video:
+  # Résolution pour l'analyse de mouvement (largeur en pixels)
+  analysis_width: 480
+  # FPS pour l'échantillonnage lors de l'analyse de mouvement
+  analysis_fps: 5
+  # Qualité des clips finaux extraits
+  clip_quality: "high"  # high, medium, low
+  # Marge en secondes avant le début détecté du kata
+  clip_margin_before: 3.0
+  # Marge en secondes après la fin détectée du kata
+  clip_margin_after: 3.0
+
+# Paramètres de détection de mouvement
+motion:
+  # Taille du kernel de flou gaussien (doit être impair)
+  blur_kernel_size: 11
+  # Fenêtre de lissage en secondes
+  smoothing_window: 2.0
+  # Seuil de mouvement pour considérer qu'il y a activité (0-255)
+  activity_threshold: 15.0
+
+# Paramètres de détection de segments
+segments:
+  # Durée minimale d'un kata en secondes (global safe_min from reference)
+  min_duration: 90.0
+  # Durée maximale d'un kata en secondes (global safe_max from reference)
+  max_duration: 280.0
+  # Fichier de référence des durées par kata (pour validation fine)
+  kata_durations_ref: "data/reference/kata_durations.yaml"
+  # Seuil minimum de score de mouvement pour un segment valide
+  min_motion_score: 0.5
+  # Durée max de trou (en secondes) à fusionner entre deux phases de mouvement
+  merge_gap: 20.0
+  # Seuil de confiance minimum pour auto-validation
+  auto_validate_confidence: 0.8
+
+# Paramètres de pairing
+pairing:
+  # Écart maximal en secondes entre fin rouge et début bleu dans un match
+  max_gap_within_match: 120.0
+  # Écart minimal en secondes entre deux matchs consécutifs
+  min_gap_between_matches: 30.0
+  # Tolérance sur la durée (ratio min/max acceptable)
+  duration_ratio_tolerance: 0.3
+
+# Chemins de données
+paths:
+  input_dir: "data/input"
+  intermediate_dir: "data/intermediate"
+  # Chemins modèles : SA/K1 est inséré automatiquement avant pending/validated.
+  clips_pending_dir: "data/clips/pending"
+  clips_validated_dir: "data/clips/validated"
+  output_dir: "data/output"
+  validation_file: "data/output/validation.csv"
+  backup_dir: "data/backups"
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/pipeline.log"
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"

@@ -1,0 +1,9 @@
+id_live,url,local_path,competition,category,section,useful_start,useful_end,analysis_quality,clip_quality,status
+sa_tbilisi_2026_f_pool2_t1,https://www.youtube.com/watch?v=oy6ZisFuN4w,data/input/sa_tbilisi_2026_f_pool2.mp4,SA_Tbilisi,Female Kata,pool_2_t1,378,3582,low,high,pending
+sa_tbilisi_2026_f_pool2_t2,https://www.youtube.com/watch?v=oy6ZisFuN4w,data/input/sa_tbilisi_2026_f_pool2.mp4,SA_Tbilisi,Female Kata,pool_2_t2,3657,5204,low,high,pending
+sa_tbilisi_2026_f_pool2_t3,https://www.youtube.com/watch?v=oy6ZisFuN4w,data/input/sa_tbilisi_2026_f_pool2.mp4,SA_Tbilisi,Female Kata,pool_2_t3,5935,6696,low,high,pending
+sa_tbilisi_2026_f_pool2_pw1,https://www.youtube.com/watch?v=oy6ZisFuN4w,data/input/sa_tbilisi_2026_f_pool2.mp4,SA_Tbilisi,Female Kata,pool_2_pw1,7062,7344,low,high,pending
+sa_tbilisi_2026_f_pool8_t1,https://www.youtube.com/watch?v=oy6ZisFuN4w,data/input/sa_tbilisi_2026_f_pool2.mp4,SA_Tbilisi,Female Kata,pool_8_t1,7565,10188,low,high,pending
+sa_tbilisi_2026_f_pool8_t2,https://www.youtube.com/watch?v=oy6ZisFuN4w,data/input/sa_tbilisi_2026_f_pool2.mp4,SA_Tbilisi,Female Kata,pool_8_t2,10344,12181,low,high,pending
+sa_tbilisi_2026_f_pool8_t3,https://www.youtube.com/watch?v=oy6ZisFuN4w,data/input/sa_tbilisi_2026_f_pool2.mp4,SA_Tbilisi,Female Kata,pool_8_t3,12292,13156,low,high,pending
+sa_tbilisi_2026_f_pool8_pw1,https://www.youtube.com/watch?v=oy6ZisFuN4w,data/input/sa_tbilisi_2026_f_pool2.mp4,SA_Tbilisi,Female Kata,pool_8_pw1,13351,13701,low,high,pending
