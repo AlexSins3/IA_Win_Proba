@@ -1,0 +1,6 @@
+# Application Streamlit de prédiction + pipeline GNN/MediaPipe.
+# Installe également le package local et la commande `kata-pipeline`.
+-e .[ui,gnn]
+
+# Sur Streamlit Community Cloud, FFmpeg et les bibliothèques Linux d'OpenCV
+# sont installés depuis le fichier packages.txt.
