@@ -312,6 +312,16 @@ def align(
         raise typer.Exit(1)
 
     live_matches = [m for m in matches if _matches_live(m, live)]
+    if not live_matches:
+        section = live.section or "(aucune section)"
+        console.print(
+            f"[red]Aucun match trouvé pour le live '{live_id}' dans {dataset_file}.[/red]"
+        )
+        console.print(
+            "Ajoutez au dataset une ligne correspondant à "
+            f"competition={live.competition}, category={live.category}, section={section}."
+        )
+        raise typer.Exit(1)
 
     # Charger segments et faire le pairing
     segments_path = cfg.paths.intermediate_dir / f"{live_id}_segments.json"
@@ -382,7 +392,26 @@ def generate_clips(
         console.print("Lancez d'abord: kata-pipeline align")
         raise typer.Exit(1)
 
-    df = pd.read_csv(clips_csv)
+    try:
+        df = pd.read_csv(clips_csv)
+    except pd.errors.EmptyDataError:
+        console.print(f"[red]Le dataset de clips est vide : {clips_csv}[/red]")
+        console.print(
+            "Relancez l'alignement après avoir ajouté les métadonnées du match "
+            "dans le dataset de compétition."
+        )
+        raise typer.Exit(1) from None
+    if df.empty:
+        console.print(f"[red]Le dataset de clips ne contient aucun passage : {clips_csv}[/red]")
+        raise typer.Exit(1)
+    empty_rows = df.isna().all(axis=1)
+    empty_count = int(empty_rows.sum())
+    if empty_count:
+        console.print(
+            f"[yellow]{empty_count} ligne(s) entièrement vide(s) ignorée(s) "
+            f"dans {clips_csv.name}.[/yellow]"
+        )
+        df = df.loc[~empty_rows].copy()
     clips = [KataClip(**row) for _, row in df.iterrows()]
 
     # Trouver la vidéo source
